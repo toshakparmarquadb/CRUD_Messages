@@ -37,25 +37,27 @@ dfx start --background
 dfx deploy
 ```
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+## Once you have done the deployment then you move to your code editior and open the terminal.
 
-If you have made changes to your backend canister, you can generate a new candid interface with
+### Run the following commands to check the All CRUD Operations.
 
-```bash
-npm run generate
+#### 1. Create Messages:
 ```
-
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
-
-If you are making frontend changes, you can start a development server with
-
-```bash
-npm start
+  dfx canister call crud_messages_backend create_message '("Hello World!", null)'
 ```
-
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
-
-### Note on frontend environment variables
+#### 2. Read & Show Messages:
+```
+ dfx canister call crud_messages_backend get_message '(1 : nat64)'
+```
+#### 3. Update Messages:
+```
+   dfx canister call crud_messages_backend update_message '(1 : nat64, "Hello, Quad B Tech")'
+```
+#### 4. Delete Messages:
+```
+  dfx canister call crud_messages_backend delete_message '(1 : nat64)'
+```
+#### All Other function is on developing phase..
 
 If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
 
