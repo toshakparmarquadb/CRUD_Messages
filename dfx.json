@@ -1,0 +1,18 @@
+{
+  "canisters": {
+    "crud_messages_backend": {
+      "candid": "src/crud_messages_backend/crud_messages_backend.did",
+      "src": "src/main.rs",
+      "package": "crud_messages_backend",
+      "type": "rust"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

@@ -1,0 +1,14 @@
+[package]
+name = "crud_messages_backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ic-cdk = "0.11.1"  # Replace with the correct version
+ic-cdk-macros = "0.8.1"
+serde = { version = "1.0.159", features = ["derive"] }
+candid = "0.9.9"
+
+
+[lib]
+crate-type = ["cdylib"]
