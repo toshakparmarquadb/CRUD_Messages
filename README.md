@@ -41,21 +41,83 @@ dfx deploy
 
 ### Run the following commands to check the All CRUD Operations.
 
+#### Note : Every time when you run any command, you need to enter the passphere So, my passphere is:
+```
+Minter@123
+```
+
 #### 1. Create Messages:
 ```
   dfx canister call crud_messages_backend create_message '("Hello World!", null)'
 ```
+#### Output 1:
+```
+(
+  variant {
+    17_724 = record {
+      23_515 = 4 : nat64;
+      272_465_847 = null;
+      427_265_337 = "Hello World!";
+      1_779_848_746 = 1_730_964_990_708_415_831 : nat64;
+      1_937_500_811 = principal "iqrdr-l2gzn-fth7f-iupce-xj3vb-7pe4k-7xnej-gps5z-tcsda-aepi7-dqe";
+      1_962_907_452 = 0 : nat32;
+      2_136_900_368 = null;
+      2_871_942_152 = vec {};
+    }
+  },
+)
+```
+
 #### 2. Read & Show Messages:
 ```
- dfx canister call crud_messages_backend get_message '(1 : nat64)'
+ dfx canister call crud_messages_backend get_message '(4 : nat64)'
+```
+#### Output 2:
+```
+(
+  variant {
+    17_724 = record {
+      23_515 = 4 : nat64;
+      272_465_847 = null;
+      427_265_337 = "Hello World!";
+      1_779_848_746 = 1_730_964_990_708_415_831 : nat64;
+      1_937_500_811 = principal "iqrdr-l2gzn-fth7f-iupce-xj3vb-7pe4k-7xnej-gps5z-tcsda-aepi7-dqe";
+      1_962_907_452 = 0 : nat32;
+      2_136_900_368 = null;
+      2_871_942_152 = vec {};
+    }
+  },
+)
 ```
 #### 3. Update Messages:
 ```
-   dfx canister call crud_messages_backend update_message '(1 : nat64, "Hello, Quad B Tech")'
+   dfx canister call crud_messages_backend update_message '(4 : nat64, "Hello, Quad B Tech")'
+```
+#### Output 3:
+```
+(
+  variant {
+    17_724 = record {
+      23_515 = 4 : nat64;
+      272_465_847 = opt (1_730_965_153_037_389_476 : nat64);
+      427_265_337 = "Hello, Quad B Tech";
+      1_779_848_746 = 1_730_964_990_708_415_831 : nat64;
+      1_937_500_811 = principal "iqrdr-l2gzn-fth7f-iupce-xj3vb-7pe4k-7xnej-gps5z-tcsda-aepi7-dqe";
+      1_962_907_452 = 0 : nat32;
+      2_136_900_368 = null;
+      2_871_942_152 = vec {};
+    }
+  },
+)
 ```
 #### 4. Delete Messages:
 ```
   dfx canister call crud_messages_backend delete_message '(1 : nat64)'
+```
+#### Output 4:
+```
+WARN: Cannot fetch Candid interface for delete_message, sending arguments with inferred types.
+(variant { 17_724 })
 ```
 #### All Other function is on developing phase..
 
